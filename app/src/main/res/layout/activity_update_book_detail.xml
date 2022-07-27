@@ -108,6 +108,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:inputType="numberDecimal"
         android:hint="book Price"
         app:layout_constraintTop_toBottomOf="@+id/addDescriptionEt"
         tools:layout_editor_absoluteX="0dp" />
@@ -126,7 +127,6 @@
         android:id="@+id/addPublisherEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
         android:layout_marginTop="28dp"
         android:hint="publisher"
         app:layout_constraintTop_toBottomOf="@+id/addQtyEt"
@@ -139,7 +139,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:entries="@array/bookCategories"
-        android:hint="publisher"
         android:minHeight="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addPublisherEt"
