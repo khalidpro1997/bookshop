@@ -359,6 +359,7 @@ class BookAdapter(val context: Context, spinnerPos: Int) :
             val bookPrice = book.bookPrice
             val bookQuantity = book.bookQuantity
             val bookCategory = book.bookCategories
+            val imageUrl = book.bookImageUrl
             val i = Intent(context.applicationContext, UpdateBookDetail::class.java)
             i.putExtra("bookName", bookName)
             i.putExtra("bookDescription", bookDescription)
@@ -366,6 +367,7 @@ class BookAdapter(val context: Context, spinnerPos: Int) :
             i.putExtra("bookPrice", bookPrice)
             i.putExtra("bookQuantity", bookQuantity)
             i.putExtra("bookCategories", bookCategory)
+            i.putExtra("imageUrl",imageUrl)
 
             context.startActivity(i)
         }

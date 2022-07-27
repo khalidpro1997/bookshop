@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.view.View
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.bookshop.Model.Book
 import com.example.bookshop.R
 import com.google.firebase.firestore.FirebaseFirestore
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_update_book_detail.*
 import kotlinx.android.synthetic.main.activity_update_book_detail.book_description_Tv
 import kotlinx.android.synthetic.main.activity_update_book_detail.view.*
 import kotlinx.android.synthetic.main.book_item.*
+import kotlinx.android.synthetic.main.book_item.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -38,7 +40,9 @@ class UpdateBookDetail : AppCompatActivity() {
         val bookQuantity = intent.getStringExtra("bookQuantity")
         val bookPublisher = intent.getStringExtra("bookPublisher")
         val bookCategories = intent.getStringExtra("bookCategories")
+        val imageUrl = intent.getStringExtra("imageUrl")
 
+        Glide.with(applicationContext).load(imageUrl).into(circleImageViewUpdate)
         bookNameTv.text = bookName
         book_description_Tv.text = bookDescription
         bookPrice_tv.text = bookPrice

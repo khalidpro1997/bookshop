@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
+import com.bumptech.glide.Glide
 import com.example.bookshop.Model.Photo
 import com.example.bookshop.R
 import com.example.bookshop.ViewModel.BookViewModel
@@ -23,6 +24,7 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_add.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.book_item.view.*
 import java.io.IOException
 import java.util.*
 import kotlin.collections.ArrayList
@@ -78,6 +80,7 @@ class AddActivity : AppCompatActivity() {
             add["bookQuantity"] = bookQuantity
             add["bookPublisher"] = bookPublisher
             add["bookCategories"] = bookCategories
+            add["imageUrl"] = filePath.toString()
 
             FirebaseFirestore.getInstance().collection("Book").add(add).addOnSuccessListener {
                 uploadImage()
@@ -135,6 +138,8 @@ class AddActivity : AppCompatActivity() {
                 taskSnapshot.storage.downloadUrl.addOnSuccessListener {
                     imageView.setImageURI(null)
                     Toast.makeText(this, "Image added to firebase", Toast.LENGTH_SHORT).show()
+//                    FirebaseStorage.getInstance().reference.child()
+
                 }
             })
 
