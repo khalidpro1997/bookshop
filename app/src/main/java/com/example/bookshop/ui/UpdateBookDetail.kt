@@ -55,21 +55,23 @@ class UpdateBookDetail : AppCompatActivity() {
         addQtyEt.text = Editable.Factory.getInstance().newEditable(bookQuantity)
         addPublisherEt.text = Editable.Factory.getInstance().newEditable(bookPublisher)
 
-        if (bookCategories.equals("Action and Adventure")){
+        val categories: Array<String> = this.resources.getStringArray(R.array.bookCategories)
+
+        if (bookCategories.equals(categories[0])){
             addCategoriesSpinner?.setSelection(0)
-        } else if (bookCategories.equals("Classics")){
+        } else if (bookCategories.equals(categories[1])){
             addCategoriesSpinner?.setSelection(1)
-        } else if (bookCategories.equals("Comic Book or Graphic Novel")){
+        } else if (bookCategories.equals(categories[2])){
             addCategoriesSpinner?.setSelection(2)
-        } else if (bookCategories.equals("Detective and Mystery")){
+        } else if (bookCategories.equals(categories[3])){
             addCategoriesSpinner?.setSelection(3)
-        } else if (bookCategories.equals("Fantasy")){
+        } else if (bookCategories.equals(categories[4])){
             addCategoriesSpinner?.setSelection(4)
-        } else if (bookCategories.equals("Historical Fiction")){
+        } else if (bookCategories.equals(categories[5])){
             addCategoriesSpinner?.setSelection(5)
-        } else if (bookCategories.equals("Horror")){
+        } else if (bookCategories.equals(categories[6])){
             addCategoriesSpinner?.setSelection(6)
-        } else if (bookCategories.equals("Literary Fiction")){
+        } else if (bookCategories.equals(categories[7])){
             addCategoriesSpinner?.setSelection(7)
         }
 
